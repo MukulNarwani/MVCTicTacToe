@@ -12,7 +12,7 @@ class GameBoard():
         return np.array([[0,0,0],[0,0,0],[0,0,0]])
     
     def view(self):
-        print(self.board)
+        return(self.board)
     
     #TODO: Win Logic
     
@@ -27,9 +27,3 @@ class GameBoard():
             raise ValueError('position already filled')
 
 a = GameBoard()
-a.view()
-a.makeMove((0,0))
-a.view()
-a.makeMove((1,1))
-a.view()
-a.makeMove((0,0))
