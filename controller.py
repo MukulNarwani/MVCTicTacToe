@@ -15,6 +15,10 @@ class Controller():
             self.board.makeMove(pos)
         except ValueError as e:
             self.events.onException(e)
+        result = self.board.checkWin()
+        if result:
+            print(result)
+            self.view.handleWin(result)
 
         self.view.updateBoard(self.board.view())
 
