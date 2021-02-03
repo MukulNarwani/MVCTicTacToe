@@ -7,14 +7,14 @@ class GameBoard():
         self.board = self.initializeBoard()
         self.activeTurn=-1
 
-    #TODO: BoardInitialization 
+    #BoardInitialization 
     def initializeBoard(self):
         return np.array([[0,0,0],[0,0,0],[0,0,0]])
     
     def view(self):
         return(self.board)
     
-    #TODO: Win Logic
+    #Win Logic
     def checkRows(self,board):
        
         for row in board:
@@ -36,14 +36,13 @@ class GameBoard():
         for newBoard in [board, np.transpose(board)]:
             result = self.checkRows(newBoard)
             if result:
-                print(result)
                 return result
         diagResult = self.checkDiagonals() 
         return diagResult
 
     
 
-    #TODO: Move Logic
+    #Move Logic
     def makeMove(self, pos):
         if(self.board[pos[0],pos[1]] == 0):
             
@@ -52,4 +51,4 @@ class GameBoard():
         else:
             raise ValueError('position already filled')
 
-a = GameBoard()
+
